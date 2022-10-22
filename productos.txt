@@ -1,0 +1,1 @@
+[[{"id":1,"nombre":"helado de crema de oreo ","imagen":"./img/oferta1.jpg"},{"id":2,"nombre":" cofler dulce de leche ","precio":2000,"imagen":"./img/oferta2.jpg"},{"id":3,"nombre":"helado de frutilla y crema","imagen":"./img/oferta3.jpg"}]]
