@@ -59,20 +59,32 @@ class Contenedor {
     deleteAll() {
         fs.writeFileSync(this.nameArc, "")
     }
+    
+    async getRandom(){
+        try {
+            let products = await this.getAll();
+            let productsJSON = JSON.parse(products)
+            let random= Math.floor(Math.random()*productsJSON.length)
+            return productsJSON[random]
+        } catch (error) {
+            return []
+        }
+    }
+
 }
 
 
 objeto = [{
-    id: 0,
+    id: 1,
     nombre: "rey",
     thumbnail:"https://i.ibb.co/S541325/oferta6.jpg"
 },
 {
-    id: 1,
+    id: 2,
     nombre: "rey",
     thumbnail:"https://i.ibb.co/S541325/oferta2.jpg"
 },{
-    id: 2,
+    id: 3,
     nombre : "rey",
     thumbnail:"https://i.ibb.co/S541325/oferta5.jpg"
 }
@@ -80,8 +92,34 @@ objeto = [{
 const newArchivo = new Contenedor("./productos.txt");
 
 
-newArchivo.save(objeto).then(resolve => console.log(resolve));
-newArchivo.getById(1).then(resolve => console.log(resolve));
-newArchivo.getAll().then(resolve => console.log(resolve));
-newArchivo.deleteById(10);
-newArchivo.deleteAll();
+// newArchivo.save(objeto).then(resolve => console.log(resolve));
+// newArchivo.getById(1).then(resolve => console.log(resolve));
+// newArchivo.getAll().then(resolve => console.log(resolve));
+// newArchivo.deleteById(10);
+// newArchivo.deleteAll();
+
+console.log(newArchivo);
+ 
+
+
+const express=require("express");
+app=express();
+
+const PORT=8080;
+
+app.get('/productos',(req,res)=>{
+    newArchivo.getAll()
+    .then(resolve =>res.end("productos "+resolve) );
+
+
+})
+
+app.get('/productoRandom', (req,res)=>{
+    newArchivo.getRandom()
+    .then((resolve)=> {
+        res.send(resolve)
+    })
+})
+
+
+app.listen(PORT,()=>console.log(`http://localhost:${PORT}`))
