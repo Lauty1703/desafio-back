@@ -1,0 +1,28 @@
+<%- include('./partials/cabecera' )%>
+<%- include('./partials/nav.ejs')  -%> 
+
+<h2>Productos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% productos.forEach(p => { %>
+            <tr>
+                <td><%= p.id %> </td>
+                <td><%= p.title %> </td>
+                <td>$ <%= p.price %> </td>
+                <td ><a href="/productos/detalle/<%= p.id %>"><img src="<%= p.thumbnail %> " width="100px" height="auto"></a></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+</body>
+</html>
