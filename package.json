@@ -1,28 +1,27 @@
+
 {
-  "name": "back",
+  "name": "knex",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon script.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lauty1703/desafio-back.git"
+    "start": "node src/app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lauty1703/desafio-back/issues"
-  },
-  "homepage": "https://github.com/Lauty1703/desafio-back#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  },
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "knex": "^2.4.0",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3",
+    "sqlite3": "^5.1.4"
   }
 }

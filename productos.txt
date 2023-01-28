@@ -1,1 +1,0 @@
-[{"id":1,"nombre":"helado de chocolate","thumbnail":"https://i.ibb.co/S541325/oferta6.jpg"},{"id":2,"nombre":"helado de frutilla","thumbnail":"https://i.ibb.co/S541325/oferta2.jpg"},{"id":3,"nombre":"helado de crema","thumbnail":"https://i.ibb.co/S541325/oferta5.jpg"}]

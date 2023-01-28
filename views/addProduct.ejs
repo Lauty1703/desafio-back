@@ -1,26 +1,74 @@
-<%- include('./partials/cabecera' )%>
+<%- include("template/cabecera")%>
 
-<%- include('./partials/nav.ejs')  -%> 
-
-
-<h2>Agregar productos</h2>
-
-<form action="/productos" method="post">
-    <div class="mb-3">
-        <label for="title" class="form-label">Nombre del producto:</label>
-        <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+    <div class="m-5">
+        <h1 class="">chat general</h1>
+        <div>
+            <input type="text" id="chatBox">
+        </div>
+        <div class="">
+            <p id="logsPanel"></p>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="price" class="form-label">Precio:</label>
-        <input type="number" class="form-control" id="price" name="price" >
-    </div>                   
-    <div class="mb-3">
-        <label for="thumbnail" class="form-label">Imagen:</label>
-        <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
-    </div>
-    <button type="submit" class="btn  w-100 btn-primary">Agregar</button>
-</form>
 
 
-</body>
-</html>
+
+    <form class="m-5" id="formulario">
+        <h2 class="text-primary">Ingrese el producto</h2>
+        <div class="mb-3">
+            <label for="nombreProduct" class="form-label">nombre del producto</label>
+            <input type="text" class="form-control" id="nombreProduct">
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">precio del producto</label>
+            <input type="text" class="form-control" id="precio">
+        </div>
+        <div class="mb-3">
+            <label for="imagProduct" class="form-label"> url imgen del producto</label>
+            <input type="text" class="form-control" id="imagProduct">
+        </div>
+
+        <button type="submit" class="btn btn-success " id="submit">Submit</button>
+    </form>
+    <div id="producto"></div>
+
+
+    <table class="table m-5">
+        <thead>
+            <tr>
+                <th scope="col">nombre</th>
+                <th scope="col">precio</th>
+                <th scope="col">url</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <form class="m-5" id="formMensaaje">
+        <h2 class="text-primary">Centro de mensaje</h2>
+        <div class="mb-3">
+            <label for="email" class="form-label">Ingrese su mail</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class=" container">
+            <div class="mt-5 mb-5" id="contText"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="texto" class="form-label">Introduce su mensaje</label>
+            <input type="text" class="form-control" id="texto">
+        </div>
+
+        <button type="submit" class="btn btn-success " id="submit">Submit</button>
+    </form>
+
+
+    
+    <%- include("template/footer")%>
